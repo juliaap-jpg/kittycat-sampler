@@ -1,0 +1,38 @@
+<body>
+  
+</body>
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
+<script>
+  let base = 'https://storage.googleapis.com/cdn.patatap.com/A/'
+  
+  nn.get('body')
+    // .content('hello world')
+    .css('background', '#eadaf2')
+    .css('margin', 0 )
+  
+  let clay = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    // .set('controls', true)
+    .set('src', base + 'clay.mp3')
+  
+  let flay = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    //.set('controls', true)
+    .set('src', base + 'moon.mp3')
+  
+  function play (e) {
+    if (e.key === 'c') {
+      clay.currentTime = 0
+      clay.play()
+    }
+    if (e.key === 'f') {
+      flay.currentTime = 0
+      flay.play()
+    }
+  }
+  
+  nn.on('keydown', play)
+
+</script>
