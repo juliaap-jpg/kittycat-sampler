@@ -1,36 +1,213 @@
 <body>
-  
+  <div class="container">
+    <p>
+    Type out "kittycat" and see what happens!
+    </p>
+  </div>  
 </body>
 <script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
 <script>
-  let base = 'https://storage.googleapis.com/cdn.patatap.com/A/'
   
   nn.get('body')
     // .content('hello world')
-    .css('background', '#eadaf2')
+    .css('background-image', 'sparklypinkbg.gif')
     .css('margin', 0 )
+    .css('overflow', 'hidden')
   
-  let clay = nn.create('audio')
-    .addTo('body')
-    .set('preload', 'auto')
-    // .set('controls', true)
-    .set('src', base + 'clay.mp3')
   
-  let flay = nn.create('audio')
+  nn.get('p')
+    .css('color', '#A8005D')
+    .css('font-weight', 'bold')
+    .css('font-size', '25px')
+  
+  nn.get('.container')
+    .css('display', 'flex')
+    .css('justify-content', 'center')
+    .css('align-items', 'center')
+
+  
+  let Kitty = nn.create('audio')
     .addTo('body')
     .set('preload', 'auto')
     //.set('controls', true)
-    .set('src', base + 'moon.mp3')
+    .set('src', 'K-sound.mp3')
+    // replace base and clay part with file in project files, keep src
+  
+  let kItty = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    //.set('controls', true)
+    .set('src', 'i-sound.mp3')
+  
+  let kiTTy = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    .set('src', 't-sound.mp3')
+  
+  let kittY = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    .set('src', 'y-sound.mp3')
+  
+  let Cat = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    .set('src', 'c-sound.mp3')
+  
+  let cAt = nn.create('audio')
+    .addTo('body')
+    .set('preload', 'auto')
+    .set('src', 'a-sound.mp3')
+
+
   
   function play (e) {
+    if (e.key === 'k') {
+      Kitty.currentTime = 0
+      Kitty.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'kcatimg.png')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
+    }
+    if (e.key === 'i') {
+      kItty.currentTime = 0
+      kItty.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'icatimg.gif')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
+    }
+    if (e.key === 't') {
+      kiTTy.currentTime = 0
+      kiTTy.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'tcatimg.png')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
+    }
+    if (e.key === 'y') {
+      kittY.currentTime = 0
+      kittY.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'ycatimg.jpg')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
+    }
     if (e.key === 'c') {
-      clay.currentTime = 0
-      clay.play()
+      Cat.currentTime = 0
+      Cat.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'ccatimg.jpeg')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
     }
-    if (e.key === 'f') {
-      flay.currentTime = 0
-      flay.play()
+    if (e.key === 'a') {
+      cAt.currentTime = 0
+      cAt.play()
+      const x = nn.random(nn.width)
+      const y = nn.random(nn.height)
+      const r = nn.random(10, 100)
+      const catimg = nn.create('img')
+        .set('src', 'acatimg.jpg')
+        .css('width', '30%')
+        .css('border-radius', '50%')
+        .position (x, y)
+        .addTo('body')
+      const timing = {
+        duration: 600, 
+        easing: 'ease-out'
+      }
+      const keyframes = [
+        { r: 0, opacity: 0 },
+        { r: r, opacity: 1 },
+        { r: r, opacity: 0 }
+      ]
+      const catanim = catimg.animate(keyframes, timing)
+      catanim.onfinish = () => catimg.remove()
     }
+   
+    
   }
   
   nn.on('keydown', play)
